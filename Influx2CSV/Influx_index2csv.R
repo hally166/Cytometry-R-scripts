@@ -20,8 +20,8 @@ install.packages('robustbase')
 library(flowCore)
 
 #Use this section to look at an example file and to choose your parameters.  
-setwd("C:/Users/ch15/Documents/R/tutorials/indextest")  #Remember to swap \ with / on windows machines
-flowfile<-read.FCS('SCGC--00000930 kefb_1 day 2 bulk_008.fcs') #Choose your example file
+setwd("C:/wherearemyfiles/")  #Remember to use / even on windows machines
+flowfile<-read.FCS('example.fcs') #Choose your example file
 flowfile
 params<-c("FSC", "SSC", "*585/29 (561)", "*379/34 (355)") #Insert you parameters of interest here, add as many as you like
 
