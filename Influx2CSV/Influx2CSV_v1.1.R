@@ -28,7 +28,7 @@ params<-c("FSC", "SSC", "*530/30 (488)") #Insert you parameters of interest here
 #This section loops through the index files and creates the .csv files
 files <- list.files(path=".", pattern=".fcs")
 for (fileName in files) {
-  flowfile<-read.FCS(fileName, transformation=FALSE)
+  flowfile<-read.FCS(fileName) #transformation remains on for influx index files
   if (keyword(flowfile, "INDEXSORTPOSITIONS") %in% keyword(flowfile) ==TRUE){
     ofintrest<-exprs(flowfile)[c(1:nrow(flowfile)), c("Sort Result Bits", "Tray X", "Tray Y", params)]
     dataframe<-as.data.frame(ofintrest)
