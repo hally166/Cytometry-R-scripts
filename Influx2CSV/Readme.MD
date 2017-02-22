@@ -26,4 +26,4 @@ Run the rest of the script
 
 Your files are saved in the same folder with '_index.csv' appended to the filename
 
-###~This script is pretty ugly, but works (please check), however it needs to be shortened and finding the index events needs to be more robust.  i.e. +/-10% instead of all the dataframes of +/-2
+####This script is pretty ugly, but works (please check), however it needs to be shortened and finding the index events needs to be more robust.  i.e. +/-10% instead of all the dataframes of +/-2
