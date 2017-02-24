@@ -124,6 +124,13 @@ for (fileName in files) {
     Well_df_xym21[,2]<-Well_df[,2] -2
     Well_df_xym21[,3]<-Well_df[,3] -1 
     
+    Well_df_xyo21<-Well_df
+    Well_df_xyo21[,2]<-Well_df[,2] -2
+    Well_df_xyo21[,3]<-Well_df[,3] +1 
+    
+    Well_df_xyx21<-Well_df
+    Well_df_xyx21[,2]<-Well_df[,2] +1
+    Well_df_xyx21[,3]<-Well_df[,3] -2     
     
     a<-merge(indexed,Well_df_x1, c("Tray X", "Tray Y"))
     b<-merge(indexed,Well_df_x0, c("Tray X", "Tray Y"))
@@ -152,10 +159,11 @@ for (fileName in files) {
     u<-merge(indexed,Well_df_xy21, c("Tray X", "Tray Y"))
     v<-merge(indexed,Well_df_xym12, c("Tray X", "Tray Y"))
     w<-merge(indexed,Well_df_xym21, c("Tray X", "Tray Y"))
-   
+    aa<-merge(indexed,Well_df_xyo21, c("Tray X", "Tray Y"))
+    bb<-merge(indexed,Well_df_xyx21, c("Tray X", "Tray Y"))   
     
     
-    z<-rbind(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w)
+    z<-rbind(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,aa,bb)
     z<-subset(z,select=c('Well', params))
     filename=paste(substr(keyword(flowfile, "GUID"),1,(nchar(keyword(flowfile, "GUID"))-4))) #You could change 'GUID' to 'FIL' if you wish, i.e filename to actual saved name
     write.csv(z, file=paste(filename, "_index.csv", sep=""))}
