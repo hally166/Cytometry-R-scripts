@@ -1,4 +1,4 @@
-#Influx2CSV
+# Influx2CSV
 The BD Influx stores the index data (well positions) of a sort in the .fcs file.  This script batch exports this information to .csv file.
 
 Copyright (c) 2017 Genome Research Ltd.
@@ -11,7 +11,7 @@ This script only exports the index data from BD Influx files created with Sortwa
 
 This script is not pretty, or efficient, but it works.  If you want to analyse your data in R you should reseach 'flowCore' and use this script to understand how the index data is saved in the fcs file.
 
-###Instructions
+### Instructions
 Learn the basics of how to use an R script
 
 Place your files into a folder
@@ -26,4 +26,4 @@ Run the rest of the script
 
 Your files are saved in the same folder with '_index.csv' appended to the filename
 
-####This script is pretty ugly, but works (please check), however it needs to be shortened and finding the index events needs to be more robust.  i.e. +/-10% instead of all the dataframes of +/-2
+#### This script is pretty ugly, but works (please check), however it needs to be shortened and finding the index events needs to be more robust.  i.e. +/-10% instead of all the dataframes of +/-2
