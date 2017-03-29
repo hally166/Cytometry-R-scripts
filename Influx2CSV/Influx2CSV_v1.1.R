@@ -1,7 +1,7 @@
 #Copyright (c) 2017 Genome Research Ltd.
 
 #Influx2CSV
-#v1.1 Feb 2017
+#v1.11 Mar 2017
 #R 3.3.2
 #Author : Christopher Hall, Wellcome Trust Sanger Institute, christopher.hall@sanger.ac.uk
 
@@ -16,7 +16,7 @@
 #Install required packages from bioconductor and CRAN.  'Robustbase' may be required, or may not.
 source("https://bioconductor.org/biocLite.R")
 biocLite("flowCore", dependencies = TRUE)
-install.packages('robustbase')
+#install.packages('robustbase')
 library(flowCore)
 
 #Use this section to look at an example file and to choose your parameters.  
@@ -163,9 +163,9 @@ for (fileName in files) {
     bb<-merge(indexed,Well_df_xyx21, c("Tray X", "Tray Y"))   
     
     
-    z<-rbind(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,aa,bb)
-    z<-subset(z,select=c('Well', params))
+    indexdata<-rbind(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,aa,bb)
+    indexdata<-subset(indexdata,select=c('Well', params))
     filename=paste(substr(keyword(flowfile, "GUID"),1,(nchar(keyword(flowfile, "GUID"))-4))) #You could change 'GUID' to 'FIL' if you wish, i.e filename to actual saved name
-    write.csv(z, file=paste(filename, "_index.csv", sep=""))}
+    write.csv(indexdata, file=paste(filename, "_index.csv", sep=""))}
 }
 
