@@ -10,7 +10,7 @@
 # You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-#Extracts the index data from an Influx .fcs file and saves it as a .csv (Sortware v1.2.0.142 only, but you can test it if you like).  
+#Extracts the index data from an Influx .fcs file and saves it as a .csv (Sortware v1.2.0.142 only, but you can test it on other versions if you like).  
 
 
 #Install required packages from bioconductor and CRAN.  'Robustbase' may be required, or may not.
