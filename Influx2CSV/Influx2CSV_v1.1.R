@@ -43,7 +43,7 @@ for (fileName in files) {
     Well_df[, 3] <- as.numeric(as.character( Well_df[, 3] ))
     colnames(Well_df) <- c("Well","Tray X", "Tray Y")
     
-    #Sortware does not store the index positions  correctly so we have to create a multiple flowframes to find them
+    #Sortware does not store the index positions correctly so we have to create a multiple dataframes to find them
     Well_df_x1<-Well_df
     Well_df_x1[,2]<-Well_df[,2] +1
     
