@@ -7,17 +7,15 @@ Author : Christopher Hall, Wellcome Trust Sanger Institute, christopher.hall@san
 
 http://www.sanger.ac.uk/science/groups/cytometry-core-facility
 
-This script only exports the index data from BD Influx files created with Sortware v1.2.0.142.  It has not been tested with any other versions of Sortware.  It does not know your gating scheme so no gates will be shown.  
+This script  exports the index data from BD Influx files created with Sortware v1.2.0.142.  It has not been tested with any other versions of Sortware.  It does not know your gating scheme so no gates will be exported.  
 
 ### Instructions
 Place your files into a folder
 
 Change the 'setwd()' to that folder
 
-Read a single example file by adding it to 'flowfile<-read.FCS()'
-
-Choose your parameters and add them to 'params<-c("FSC", "SSC")'
-
-Run the rest of the script
+Run the script
 
 Your files are saved in the same folder with '_index.csv' appended to the filename
+
+You can choose which parameters to export on the 'indexdata<-subset(indexdata.....' line
