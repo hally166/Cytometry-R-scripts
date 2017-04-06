@@ -15,7 +15,7 @@
 
 #Install required packages from bioconductor and CRAN.
 source("https://bioconductor.org/biocLite.R")
-biocLite("flowCore")
+biocLite("flowCore", dependencies = TRUE)
 library(flowCore)
 install.packages("dplyr")
 library(dplyr)
