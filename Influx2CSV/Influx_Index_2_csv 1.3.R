@@ -1,7 +1,7 @@
 #Copyright (c) 2017 Genome Research Ltd.
 
 #InfluxIndex2CSV
-#v1.3 Apr 2017
+#v1.31 Apr 2017
 #R 3.3.3
 #Author : Christopher Hall, Wellcome Trust Sanger Institute, christopher.hall@sanger.ac.uk
 
@@ -15,14 +15,14 @@
 
 #Install required packages from bioconductor and CRAN.
 source("https://bioconductor.org/biocLite.R")
-biocLite("flowCore", dependencies = TRUE)
+biocLite("flowCore")
 library(flowCore)
+install.packages("dplyr")
 library(dplyr)
 #install.packages("fuzzyjoin")  
 
 #There is a bug in the current version of fuzzytools on CRAN (duplicates data).  Use the Github version for now
 install.packages("devtools") #you may already have this
-library(devtools)
 devtools::install_github("dgrtwo/fuzzyjoin")
 library(fuzzyjoin)
 
