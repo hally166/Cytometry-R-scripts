@@ -1,5 +1,3 @@
-#Copyright (c) 2017 Genome Research Ltd.
-
 #index overlay
 #v1.0 Sept 2017
 #R 3.4.1
