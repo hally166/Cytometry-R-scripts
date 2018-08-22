@@ -1,6 +1,6 @@
 #Christopher Hall, Wellcome Sanger Institute, ch15@sanger.ac.uk
-#Bulk export of ARIA index information V2
-#Change setwd to the directory of your folder, now with added flowsetieness
+#Bulk export of ARIA index information V2, now with added flowsetieness
+#Change setwd to the directory of your folder
 
 #load the required packages from BioConductor
 source("https://bioconductor.org/biocLite.R")
