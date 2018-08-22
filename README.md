@@ -1,6 +1,6 @@
 # R-Scripts
 #### R scripts to help with your flow cytometry analysis
-Copyright (c) 2017 Genome Research Ltd.
+Copyright (c) 2018 Genome Research Ltd.
 
 http://www.sanger.ac.uk/science/groups/cytometry-core-facility
 
