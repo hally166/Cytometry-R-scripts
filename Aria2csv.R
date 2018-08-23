@@ -9,6 +9,7 @@ library(flowCore)
 #Change setwd to the directory of your folder
 setwd("C:/Users/ch15/Desktop/files")
 
+#run these lines and csv files will be produced using the included compensation matrix for each file
 files <- list.files(path=".", pattern=".fcs$") #list files in directory the $ means it must end with .fcs
 fs<-read.flowSet(files) #puts all the .fcs files into a flowset
 fsApply(fs,function(frame){ #loop through the flowset
