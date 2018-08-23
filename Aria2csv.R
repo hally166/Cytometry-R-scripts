@@ -1,5 +1,5 @@
 #Christopher Hall, Wellcome Sanger Institute, ch15@sanger.ac.uk
-#Bulk export of ARIA index information V3, now with added flowsetieness and 384 well plate support
+#Bulk export of ARIA index information V3. Now with added flowsetieness and 384 well plate support
 
 #load the required packages from BioConductor
 source("https://bioconductor.org/biocLite.R")
