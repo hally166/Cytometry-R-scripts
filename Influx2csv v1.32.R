@@ -19,7 +19,7 @@ setwd("")  #Point the script to your directory, Remember to swap \ with / on win
 #This section loops through the index files and creates the .csv files
 files <- list.files(path=".", pattern=".fcs")
 for (fileName in files) {
-  flowfile<-read.FCS(fileName,alter.names=TRUE) #transformation remains on for influx index files
+  flowfile<-read.FCS(fileName,alter.names=TRUE) #you may or may not want to use data transformation here transformation=FALSE
   if (keyword(flowfile, "INDEXSORTPOSITIONS") %in% keyword(flowfile) ==TRUE){
     
     #Creates a datafrrame of the sorted events
