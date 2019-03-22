@@ -7,6 +7,8 @@ http://www.sanger.ac.uk/science/groups/cytometry-core-facility
 ## Influx2CSV
 The BD Influx flow cytometer sorter stores the index data (well positions) of a sort in the .fcs file.  This script batch exports this information to a .csv file.
 
+Instructional video: https://youtu.be/sUWE9WZAStE
+
 ## Aria2csv
 An R script to batch export data from Aria .fcs files.
 
