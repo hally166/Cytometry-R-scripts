@@ -29,7 +29,7 @@ library(flowAI)
 library(flowClean)
 library(flowCut)
 
-#load a fingle fcs
+#load a single fcs
 myfile <- "C:/FCSfiles/8peak400v.fcs"
 fcsfile <- read.FCS(myfile)
 
@@ -97,6 +97,9 @@ head(fsApply(fs_trans, nrow))
 head(fsApply(fs_flowAI, nrow))
 plot(fs_trans[[1]], c("610/20 (561)-A", "450/50 (355)-A"))
 plot(fs_flowAI[[1]], c("610/20 (561)-A", "450/50 (355)-A"))
+                      
+#write fcs from flowset
+write.flowSet(fs_trans, outdir="C:/FCSfiles/")
 
 #plotting
 library(ggcyto)
