@@ -8,7 +8,7 @@ I quickly put together a comaprison of the 3 main R cleaning packages: flowClean
 The artificial data is synPerturbed form flowClean and the real data is 220662.fcs from flow repository (FR-FCM-ZZZV)
 
 The code is found in the R script and the outputs are below:
-(the strange behaviour of flowCut in the synPerturbed sample is almost certainly to do with the data rather then a problem with flowCut.  I just left it here as I find it amusing)
+#### (the strange behaviour of flowCut in the synPerturbed sample is almost certainly to do with the data rather than a problem with flowCut.  I just left it here as I find it amusing that the example data from a rival package messes it up so much)
 
 ![Artificial data](https://github.com/hally166/Cytometry-R-scripts/blob/master/FCSCleaningComparisons/synPerturbed.png "Artificial data")
 
