@@ -1,4 +1,4 @@
-# This script is split into 3 sections, twice. The last bit is the same as the first, just with less the comments. 
+# This script is split into 3 sections, twice. The last bit is the same as the first, just with less comments. 
 # Each section details how to use one of the flow cytometry FCS data cleaning packages.
 # flowClean
 # flowCut
