@@ -1,8 +1,8 @@
-# This script is split into 3 sections twice. The last bit is the same as the first, just with less the comments. 
-# Each section details how to use one of the flowc ytometry FCS data cleaning packages.
+# This script is split into 3 sections, twice. The last bit is the same as the first, just with less the comments. 
+# Each section details how to use one of the flow cytometry FCS data cleaning packages.
 # flowClean
 # flowCut
-# flowAI
+# flowAI 
 # I will show how to use them for single flowFrames and flowSets, as well as showing the most common variables.
 
 #Author: Christopher Hall, EMBL:Rome
