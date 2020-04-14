@@ -1,7 +1,7 @@
 #You need to input which parameters you need to analyse many times when dealing with FCS data in R.
-#Functions either require a list of names of parameters or an index or parameters (numbers).
+#Functions either require a list of names of parameters or an index of parameters (numbers).
 
-#Following are two functions that will help, especially for flowSets.
+#Following are two functions that will help and can be used standalone or within fsApply.
 
 #Create a list of names
 
@@ -12,9 +12,9 @@ autovect_verbose<- function(ff){
   return(unname(d))
 
 #Example use - transformation
-x<-autovect_verbose(fs_comp[[1]])
-tf<-estimateLogicle(fs_comp[[1]], channels =  x)
-fs_trans<-transform(fs_comp,tf)
+x<-autovect_verbose(fs[[1]])
+tf<-estimateLogicle(fs[[1]], channels =  x)
+fs_trans<-transform(fs,tf)
 #Use in function
 x<-fsApply(fs, function(fr) autovect_verbose(fr))
 
