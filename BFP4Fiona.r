@@ -1,6 +1,5 @@
 #Load packages
 library(flowCore)
-library(flowCut)
 library(flowAI)
 library(ggcyto)
 library(flowWorkspace)
