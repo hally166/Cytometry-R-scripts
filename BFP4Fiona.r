@@ -8,7 +8,7 @@ setwd("C:\\Users\\chall\\OneDrive\\EMBL\\Test FCSfiles\\Attune\\030220")
 
 #load and clean files usinf flowAI
 files <- list.files("C:\\Users\\chall\\OneDrive\\EMBL\\Test FCSfiles\\Attune\\030220", pattern=".fcs", full.names = TRUE,ignore.case = TRUE)
-fs <- read.flowSet(files, emptyValue = FALSE)
+fs <- read.flowSet(files) # add this if you are using Attune data: emptyValue = FALSE)
 pd <- pData(fs) #this bit is because flowAI currently messed with the metadata in a bad way
 resQCfs <- flowAI::flow_auto_qc(fs) 
 pData(resQCfs) <- pd
