@@ -69,6 +69,7 @@ QC_flowCut<-flowCore::fsApply(fs, function(x)flowCut(x, Channels = autovect(fr))
 
 
 #flowAI - https://pubmed.ncbi.nlm.nih.gov/26990501/
+#By default running FlowAI will produce new fcs files in your working directory with the bad events highlighted. 
 BiocManager::install("flowAI")
 library(flowAI)
 
@@ -79,7 +80,7 @@ resQC <- flowAI::flow_auto_qc(realdata)
 #using flowAI in a flowSet
 fs<- read.flowSet(files, emptyValue = FALSE) #create a flowset from a list of files
 resQCfs <- flowAI::flow_auto_qc(fs) 
-#resQCfs is a new flowSet with your good data
+#resQCfs is a new flowSet with your good data. It will also procuce new FCS files in your working directory.
 
 #read the flowAI docuemntation about how it works.  IT has one very important variable that can effect your results: "remove_from ="
 resQC <- flow_auto_qc(realdata, remove_from = c("FR", "FS")) # FR= flow rate, FS = signal, FR = dynamic range.
