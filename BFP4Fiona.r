@@ -1,14 +1,16 @@
 #Load packages
 library(flowCore)
+library(flowCut)
 library(flowAI)
 library(ggcyto)
 library(flowWorkspace)
+library(openCyto)
 setwd("C:\\Users\\chall\\OneDrive\\EMBL\\Test FCSfiles\\Attune\\030220")
 
-#load and clean files using flowAI
+#load and clean files usinf flowAI
 files <- list.files("C:\\Users\\chall\\OneDrive\\EMBL\\Test FCSfiles\\Attune\\030220", pattern=".fcs", full.names = TRUE,ignore.case = TRUE)
-fs <- read.flowSet(files) # add this if you are using Attune data: emptyValue = FALSE)
-pd <- pData(fs) #this bit is because flowAI currently subtly messes with the metadata
+fs <- read.flowSet(files, emptyValue = TRUE) # add this if you are using Attune data: emptyValue = FALSE)
+pd <- pData(fs) #this bit is because flowAI currently messed with the metadata in a bad way
 resQCfs <- flowAI::flow_auto_qc(fs) 
 pData(resQCfs) <- pd
 
@@ -19,24 +21,22 @@ QC_report<-cbind(QC_report, 100-round(QC_report$Post_Clean/QC_report$Pre_Clean*1
 names(QC_report)<-c("Pre_Clean","Post_Clean", "% removed")
 QC_report
 
+#compensate files
+comp <- fsApply(resQCfs, function(x) spillover(x)[[3]], simplify=FALSE) #change the [[3]] dependent on the spillover keyword
+fs_comp <- compensate(resQCfs, comp)
+
 #transform files - this function chooses all the paramaters, except FSC SSC and Time, you can add more if you wish
 autovect_verbose<- function(ff){
   c<- data.frame(ff@parameters@data)
   d<- grep("FSC|SSC|Time", c$name, invert = TRUE, value = TRUE)
   return(unname(d))
 }
-x<-autovect_verbose(resQCfs[[1]])
-tf<-estimateLogicle(resQCfs[[1]], channels =  x)
-fs_trans<-transform(resQCfs,tf)
-
-#compensate files
-comp <- fsApply(resQCfs, function(x) spillover(x)[[3]], simplify=FALSE) #change the [[3]] dependent on the spillover keyword
-fs_comp <- compensate(fs_trans, comp)
-
-autoplot(fs_trans,x="FSC-A",y="SSC-A")
+x<-autovect_verbose(fs_comp[[1]])
+tf<-estimateLogicle(fs_comp[[1]], channels =  x)
+fs_trans<-transform(fs_comp,tf)
 
 #analyse data using flowWorkspace
-gs<-GatingSet(fs_comp)
+gs<-GatingSet(fs_trans)
 thisData<-gs_pop_get_data(gs)
 nonDebris<-fsApply(thisData, function(fr)openCyto:::.mindensity(fr,channels = "FSC-A", max=1000000)) #change or remove max to help it find the population
 gs_pop_add(gs,nonDebris, parent="root", name="nonDebris")
