@@ -220,10 +220,8 @@ to_plot <- paste("filename", ".png", sep = "")
 png(file_plot, width = 600, height = 600)
 plot(tsne_out)
 dev.off()
-
-
-
-
-
-
-
+                       
+#exporting parameter names and filters for your labbook
+ff<-read.FCS('xxx.fcs')
+expt<-as.data.frame(cbind(ff@parameters@data$name,ff@parameters@data$desc)) # or just use ff@parameters@data$... for one
+write.csv(expt, "parameters.csv")
