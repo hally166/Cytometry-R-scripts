@@ -225,3 +225,12 @@ dev.off()
 ff<-read.FCS('xxx.fcs')
 expt<-as.data.frame(cbind(ff@parameters@data$name,ff@parameters@data$desc)) # or just use ff@parameters@data$... for one
 write.csv(expt, "parameters.csv")
+
+#markernames + description function (i.e. markernames, plus side scatter)
+get_markernames<-function(ff){
+  ff_markernames<-ff@parameters@data[1:2]
+  ff_markernames$com = ff_markernames$name
+  ff_markernames$com[!is.na(ff_markernames$desc)] = ff_markernames$desc[!is.na(ff_markernames$desc)]
+  return(ff_markernames$com)
+}
+get_markernames(ff)
