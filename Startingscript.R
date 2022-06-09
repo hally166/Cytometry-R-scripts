@@ -17,7 +17,7 @@ BiocManager::install("CytoML") #imports FlowJo and DiVA workspaces
 BiocManager::install("flowAI")
 BiocManager::install("flowClean")
 
-#flowCut is not available on bioconductor and needs to be laoded straight from GitHub.  TO do this you need the package devtools.
+#flowCut is not available on bioconductor and needs to be loaded straight from GitHub.  TO do this you need the package devtools.
 install.packages("devtools")
 devtools::install_github("jmeskas/flowCut")
 
