@@ -16,10 +16,10 @@ BiocManager::install("CytoML") #imports FlowJo and DiVA workspaces
 #flowClean is the original, but is supeceeded by flowCut
 BiocManager::install("flowAI")
 BiocManager::install("flowClean")
+BiocManager::install("flowCut")
 
-#flowCut is not available on bioconductor and needs to be laoded straight from GitHub.  TO do this you need the package devtools.
+#The CytoExploreR package is not available on bioconductor and needs to be loaded straight from GitHub.  To do this you need the package devtools.
 install.packages("devtools")
-devtools::install_github("jmeskas/flowCut")
 
 #An intresting project is CytoExploreR that trys to blend the power of R with the ease of use of a mouse.
 devtools::install_github("DillonHammill/CytoExploreRData")
